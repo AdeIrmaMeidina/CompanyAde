@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Berita extends Model
 {
     use HasFactory;
+    
     protected $fillable = ['id', 'judul', 'deskripsi', 'foto'];
     public $timestamps = true;
 }

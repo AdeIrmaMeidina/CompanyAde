@@ -86,12 +86,14 @@ class OrganigramController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'nama' => 'nama',
+            'nama' => 'required',
             'jabatan' => 'required',
         ]);
         $organigram = Organigram::findOrFail($id);
         $organigram->nama = $request->nama;
         $organigram->jabatan = $request->jabatan;
+        $organigram->save();
+        return redirect()->route('organigram.index');
     }
 
     /**

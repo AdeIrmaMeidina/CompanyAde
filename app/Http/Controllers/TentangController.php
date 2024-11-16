@@ -15,6 +15,7 @@ class TentangController extends Controller
     public function index()
     {
         $tentang = Tentang::latest()->paginate();
+        return view('admin.tentang.index', compact('tentang'));
     }
 
     /**
@@ -24,7 +25,7 @@ class TentangController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tentang.create');
     }
 
     /**
@@ -35,7 +36,20 @@ class TentangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'judul' => 'required',
+            'deskripsi' => 'required',
+            'image' => 'required | image|mimes:jpeg,png,jpg|max:5000',
+        ]);
+        $tentang = new Tentang();
+        $tentang->judul = $request->judul;
+        $tentang->deskripsi = $request->deskripsi;
+         // upload image
+         $image = $request->file('image');
+         $image->storeAs('public/tentangs', $image->hashName());
+         $tentang->image = $image->hashName();
+        $tentang->save();
+        return redirect()->route('tentang.index');
     }
 
     /**
@@ -55,9 +69,13 @@ class TentangController extends Controller
      * @param  \App\Models\Tentang  $tentang
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tentang $tentang)
+    public function edit($id)
     {
-        //
+        $tentang = Tentang::findOrFail($id);
+        return view('admin.tentang.edit', compact('tentang'));
+
+        $tentang->save();
+        return redirect()->route('tentang.index');
     }
 
     /**
@@ -67,9 +85,24 @@ class TentangController extends Controller
      * @param  \App\Models\Tentang  $tentang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tentang $tentang)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'judul' => 'required',
+            'deskripsi' => 'required',
+            'image' => 'required|image|mimes:jpeg,jpg,png|max:5000',
+
+        ]);
+
+        $tentang = Tentang::findOrFail($id);
+        $tentang->judul = $request->judul;
+        $tentang->deskripsi = $request->deskripsi;
+        // upload image
+        $image = $request->file('image');
+        $image->storeAs('public/tentangs', $image->hashName());
+        $tentang->image = $image->hashName();
+        $tentang->save();
+        return redirect()->route('tentang.index');
     }
 
     /**
@@ -78,8 +111,11 @@ class TentangController extends Controller
      * @param  \App\Models\Tentang  $tentang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tentang $tentang)
+    public function destroy($id)
     {
-        //
+
+     $tentang = Tentang::findOrFail($id);
+    $tentang->delete();
+    return redirect()->route('tentang.index');
     }
 }

@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand text-light" href="{{url('/')}}">Admin</a>
@@ -15,6 +16,22 @@
                 <li class="nav-item">
                     <a class="nav-link text-light"  aria-current="page" href="{{route('berita.index')}}">Berita</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light"  aria-current="page" href="{{route('tentang.index')}}">Tentang</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light"  aria-current="page" href="{{route('kontak.index')}}">Kontak</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light"  aria-current="page" href="{{route('servis.index')}}">Servis</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light"  aria-current="page" href="{{route('sparepart.index')}}">Sparepart</a>
+                </li>
+
                 @endguest
 
             </ul>

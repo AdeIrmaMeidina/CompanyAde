@@ -22,14 +22,16 @@
                         @method('put')
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label">Nama</label>
-                            <input type="text" class="form-control @error('nama') is-invalid @enderror" name="judul"
-                                value="{{ old('organigram', $organigram->nama) }}" placeholder="nama" required>
-                            @error('nama')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                            <div class="mb-3">
+                                <label class="form-label">Nama</label>
+                                <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
+                                    value="{{ old('organigram', $organigram->nama) }}" required>
+                                @error('nama')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="jabatan" class="form-label">Jabatan</label>

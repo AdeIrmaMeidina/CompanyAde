@@ -48,6 +48,10 @@ class BeritaController extends Controller
         $berita = new Berita();
         $berita->judul = $request->judul;
         $berita->deskripsi = $request->deskripsi;
+         // upload image
+        $image = $request->file('image');
+        $image->storeAs('public/beritas', $image->hashName());
+        $berita->image = $image->hashName();
         $berita->save();
         return redirect()->route('berita.index');
 
@@ -103,6 +107,7 @@ class BeritaController extends Controller
         $image->storeAs('public/beritas', $image->hashName());
         $berita->image = $image->hashName();
         $berita->save();
+        return redirect()->route('berita.index');
     }
 
     /**

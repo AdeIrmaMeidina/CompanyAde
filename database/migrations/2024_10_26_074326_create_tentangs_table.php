@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->String('judul');
             $table->String('deskripsi');
-            $table->string('foto');
+            $table->String('image');
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 
 });
 
@@ -27,3 +27,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('organigram', App\Http\Controllers\OrganigramController::class);
 Route::resource('berita', App\Http\Controllers\BeritaController::class);
+Route::resource('tentang', App\Http\Controllers\TentangController::class);
+Route::resource('kontak', App\Http\Controllers\KontakController::class);
+Route::resource('servis', App\Http\Controllers\ServisController::class);
+Route::resource('sparepart', App\Http\Controllers\SparepartController::class);
+
+
