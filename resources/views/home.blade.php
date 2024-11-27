@@ -1,258 +1,493 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-
-		<title>Car Workshop</title>
-
-		<!-- Loading third party fonts -->
-		<link href="http://fonts.googleapis.com/css?family=Titillium+Web:300,400,700|" rel="stylesheet" type="text/css">
-		<link href={{asset('assets/frontend/fonts/font-awesome.min.css')}} rel="stylesheet" type="text/css">
-
-		<!-- Loading main css file -->
-		<link rel="stylesheet" href={{asset('assets/frontend/css/style.css')}}>
-
-		<!--[if lt IE 9]>
-		<script src="js/ie-support/html5.js"></script>
-		<script src="js/ie-support/respond.js"></script>
-		<![endif]-->
-
-	</head>
-
-
-	<body class="header-collapse">
-
-		<div id="site-content">
-			<header class="site-header">
-				<div class="container">
-					<a id="branding" href="index.html">
-						<img src= {{asset('assets/frontend/images/logo.png')}} alt="Company Logo" class="logo">
-						<h1 class="site-title">Company<span>name</span></h1>
-					</a>
-
-					<nav class="main-navigation">
-						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
-						<ul class="menu">
-							<li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
-							<li class="menu-item"><a href="about.html">About</a></li>
-							<li class="menu-item"><a href="services.html">Services</a></li>
-							<li class="menu-item"><a href="gallery.html">Gallery</a></li>
-							<li class="menu-item"><a href="contact.html">Contact</a></li>
-						</ul>
-					</nav>
-					<nav class="mobile-navigation"></nav>
-				</div>
-			</header> <!-- .site-header -->
-
-			<main class="main-content">
-				<div class="hero hero-slider">
-					<ul class="slides">
-						<li data-bg-image= {{asset('assets/frontend/dummy/slide-1.jpg')}}>
-							<div class="container">
-								<h2 class="slide-title">Place the header here</h2>
-								<p class="slide-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <br> totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
-								<a href="#" class="button">Read more</a>
-							</div>
-						</li>
-						<li data-bg-image= {{asset('assets/frontend/dummy/slide-2.jpg')}}>
-							<div class="container">
-								<h2 class="slide-title">Place the slide 2 header here</h2>
-								<p class="slide-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <br> totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
-								<a href="#" class="button">Read more</a>
-							</div>
-						</li>
-						<li data-bg-image= {{asset('assets/frontend/dummy/slide-3.jpg')}}>
-							<div class="container">
-								<h2 class="slide-title">Place third slide header here</h2>
-								<p class="slide-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <br> totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
-								<a href="#" class="button">Read more</a>
-							</div>
-						</li>
-					</ul>
-				</div> <!-- .hero-slider -->
-
-				<div class="fullwidth-block">
-					<div class="container">
-						<h2 class="section-title">Welcome to our website</h2>
-						<p class="section-desc">Occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-
-						<div class="row">
-
-							<div class="counter">
-								<img src= {{asset('assets/frontend/images/icon-car.png')}} class="counter-icon">
-								<h3 class="counter-num">1500</h3>
-								<small class="counter-label">car repaired</small>
-							</div>
+@extends('layouts.user')
+@section('content')
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 pb-5">
+        <div class="owl-carousel header-carousel position-relative mb-5">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src={{asset('frontend/assets/img/carousel-1.jpg')}} alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(6, 3, 21, .5);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Transport & Logistics Solution</h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">#1 Place For Your <span class="text-primary">Logistics</span> Solution</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Free Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src={{asset('frontend/assets/img/carousel-2.jpg')}} alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(6, 3, 21, .5);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Transport & Logistics Solution</h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">#1 Place For Your <span class="text-primary">Transport</span> Solution</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Free Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
 
 
-							<div class="counter">
-								<img src= {{asset('assets/frontend/images/icon-wrench.png')}} class="counter-icon">
-								<h3 class="counter-num">5000</h3>
-								<small class="counter-label">diagnoses</small>
-							</div>
+    <!-- About Start -->
+    <div class="container-fluid overflow-hidden py-5 px-lg-0">
+        @php $tentang = App\Models\Tentang::first(); @endphp
+        @if ($tentang)
+        <div class="container about py-5 px-lg-0">
+            <div class="row g-5 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src={{asset('/storage/tentangs/' . $tentang->image)}} style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 about-text wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="text-secondary text-uppercase mb-3">{{ $tentang->judul }}</h6>
+                    <p class="mb-5">{{ $tentang->deskripsi }}</p>
+                    {{-- <div class="row g-4 mb-5">
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                            <i class="fa fa-globe fa-3x text-primary mb-3"></i>
+                            <h5>Global Coverage</h5>
+                            <p class="m-0">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
+                        </div>
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                            <i class="fa fa-shipping-fast fa-3x text-primary mb-3"></i>
+                            <h5>On Time Delivery</h5>
+                            <p class="m-0">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
+                        </div>
+                    </div> --}}
+                    {{-- <a href="" class="btn btn-primary py-3 px-5">Explore More</a> --}}
+                </div>
+            </div>
+        </div> @endif
+    </div>
+    <!-- About End -->
 
 
-							<div class="counter">
-								<img src={{asset('assets/frontend/images/icon-gears.png')}} class="counter-icon">
-								<h3 class="counter-num">6000</h3>
-								<small class="counter-label">gears changed</small>
-							</div>
+    <!-- Fact Start -->
+    <div class="container-xxl py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-secondary text-uppercase mb-3">Some Facts</h6>
+                    <h1 class="mb-5">#1 Place To Manage All Of Your Shipments</h1>
+                    <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-headphones fa-2x flex-shrink-0 bg-primary p-3 text-white"></i>
+                        <div class="ps-4">
+                            <h6>Call for any query!</h6>
+                            <h3 class="text-primary m-0">+012 345 6789</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-sm-6">
+                            <div class="bg-primary p-4 mb-4 wow fadeIn" data-wow-delay="0.3s">
+                                <i class="fa fa-users fa-2x text-white mb-3"></i>
+                                <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                                <p class="text-white mb-0">Happy Clients</p>
+                            </div>
+                            <div class="bg-secondary p-4 wow fadeIn" data-wow-delay="0.5s">
+                                <i class="fa fa-ship fa-2x text-white mb-3"></i>
+                                <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                                <p class="text-white mb-0">Complete Shipments</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="bg-success p-4 wow fadeIn" data-wow-delay="0.7s">
+                                <i class="fa fa-star fa-2x text-white mb-3"></i>
+                                <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                                <p class="text-white mb-0">Customer Reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fact End -->
 
 
-							<div class="counter last">
-								<img src={{asset('assets/frontend/images/icon-oil.png')}} class="counter-icon">
-								<h3 class="counter-num">1200</h3>
-								<small class="counter-label">oil litres used</small>
-							</div>
-
-						</div>
-					</div> <!-- .container -->
-				</div> <!-- .fullwidth-block -->
-
-				<div class="fullwidth-block dark-bg" data-bg-color="#1b1b1b">
-					<div class="container">
-						<h2 class="section-title">Welcome to our website</h2>
-						<div class="row">
-							<div class="col-md-3 col-sm-6">
-								<div class="team">
-									<figure class="team-image"><img src={{asset('assets/frontend/dummy/person-1.jpg')}} alt="person-1"></figure>
-									<h3 class="team-name">Steven Simon</h3>
-									<small class="team-desc">Main mechaninc</small>
-									<div class="team-social">
-										<a href=""><i class="fa fa-facebook"></i></a>
-										<a href=""><i class="fa fa-google-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="team">
-									<figure class="team-image"><img src={{asset('assets/frontend/dummy/person-2.jpg')}} alt="person-2"></figure>
-									<h3 class="team-name">George Stevens</h3>
-									<small class="team-desc">Painter</small>
-									<div class="team-social">
-										<a href=""><i class="fa fa-facebook"></i></a>
-										<a href=""><i class="fa fa-google-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="team">
-									<figure class="team-image"><img src={{asset('assets/frontend/dummy/person-3.jpg')}} alt="person-3"></figure>
-									<h3 class="team-name">David Smith</h3>
-									<small class="team-desc">Engineer</small>
-									<div class="team-social">
-										<a href=""><i class="fa fa-facebook"></i></a>
-										<a href=""><i class="fa fa-google-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="team">
-									<figure class="team-image"><img src={{asset('assets/frontend/dummy/person-4.jpg')}} alt="person-4"></figure>
-									<h3 class="team-name">Howarrd Newman</h3>
-									<small class="team-desc">Computer Specialist</small>
-									<div class="team-social">
-										<a href=""><i class="fa fa-facebook"></i></a>
-										<a href=""><i class="fa fa-google-plus"></i></a>
-									</div>
-								</div>
-							</div>
-
-						</div> <!-- .row -->
-					</div> <!-- .container -->
-				</div> <!-- .fullwidth-block -->
-
-				<div class="fullwidth-block">
-					<div class="container">
-						<h2 class="section-title">Why choose us?</h2>
-						<div class="row">
-							<div class="col-md-4">
-								<div class="feature">
-									<div class="feature-icon">
-										<img src= {{asset('assets/frontend/images/icon-wheel-white.png')}}>
-									</div>
-									<h3 class="feature-title">Sed ut perspiciatis unde omnis</h3>
-									<p>Iste natus error sit voluptatem accusantium laudantium totam rem aperiam eaque ipsa quae dolor inventore dolor sit.</p>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="feature">
-									<div class="feature-icon">
-										<img src={{asset('assets/frontend/images/icon-wrench-white.png')}}>
-									</div>
-									<h3 class="feature-title">Nemo enim ipsam voluptatem</h3>
-									<p>Iste natus error sit voluptatem accusantium laudantium totam rem aperiam eaque ipsa quae dolor inventore dolor sit.</p>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="feature">
-									<div class="feature-icon">
-										<img src={{asset('assets/frontend/images/icon-key-white.png')}}>
-									</div>
-									<h3 class="feature-title">Temporibus autem quibusdam</h3>
-									<p>Iste natus error sit voluptatem accusantium laudantium totam rem aperiam eaque ipsa quae dolor inventore dolor sit.</p>
-								</div>
-							</div>
-						</div> <!-- .row -->
-					</div> <!-- .container -->
-				</div> <!-- .fullwidth-block -->
-
-				<div class="fullwidth-block dark-bg" data-bg-color="#f63f3f">
-					<div class="container">
-						<h2 class="section-title">Blog news</h2>
-						<ul class="news">
-							<li>
-								<div class="entry-date"><span class="date">3</span><span class="month">July</span></div>
-								<div class="entry-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit alias nihil cumque ratione soluta ut laborum quod architecto vitae, eum magnam totam cupiditate accusantium. Perspiciatis iusto ex perferendis reprehenderit fugiat!</div>
-							</li>
-							<li>
-								<div class="entry-date"><span class="date">30</span><span class="month">June</span></div>
-								<div class="entry-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit autem quasi nisi iure. Asperiores placeat enim id excepturi quas delectus error aliquam. Sed quo magnam dolor ratione voluptatum facere, nihil.</div>
-							</li>
-							<li>
-								<div class="entry-date"><span class="date">28</span><span class="month">June</span></div>
-								<div class="entry-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente eaque culpa optio voluptas rem, iusto soluta at temporibus commodi repellat dicta facilis sequi, quisquam a quia animi ad mollitia ab.</div>
-							</li>
-						</ul>
-						<div class="text-center">
-							<a href="#" class="button invert">Show more news</a>
-						</div>
-					</div>
-				</div>
-
-			</main> <!-- .main-content -->
-
-			<footer class="site-footer">
-				<div class="container">
-					<div class="subscribe-form">
-						<form action="#">
-							<input type="text" placeholder="Enter your email to subscribe...">
-							<button type="submit"><img src="images/icon-envelope-white.png" alt=""></button>
-						</form>
-					</div>
-					<div class="social-links">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-google-plus"></i></a>
-						<a href="#"><i class="fa fa-pinterest"></i></a>
-					</div>
-					<div class="copy">
-						<p>Copyright 2014 Company name. Designed by Themeezy. All rights reserved.</p>
-					</div>
-				</div>
-			</footer> <!-- .site-footer -->
-
-		</div> <!-- #site-content -->
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-secondary text-uppercase">Our Services</h6>
+                <h1 class="mb-5">Explore Our Services</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item p-4">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid" src={{asset('frontend/assets/img/1.jpg')}} alt="">
+                        </div>
+                        <h4 class="mb-3">Air Freight</h4>
+                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item p-4">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid" src={{asset('frontend/assets/img/2.jpg')}} alt="">
+                        </div>
+                        <h4 class="mb-3">Ocean Freight</h4>
+                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item p-4">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid" src={{asset('frontend/assets/img/3')}} alt="">
+                        </div>
+                        <h4 class="mb-3">Road Freight</h4>
+                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item p-4">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid" src={{asset('frontend/assets/img/4')}} alt="">
+                        </div>
+                        <h4 class="mb-3">Train Freight</h4>
+                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item p-4">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid" src={{asset('frontend/assets/img/service-5.jpg')}} alt="">
+                        </div>
+                        <h4 class="mb-3">Customs Clearance</h4>
+                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item p-4">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid" src={{asset('frontend/assets/img/service-6.jpg')}} alt="">
+                        </div>
+                        <h4 class="mb-3">Warehouse Solutions</h4>
+                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
 
 
+    <!-- Feature Start -->
+    <div class="container-fluid overflow-hidden py-5 px-lg-0">
+        <div class="container feature py-5 px-lg-0">
+            <div class="row g-5 mx-lg-0">
+                <div class="col-lg-6 feature-text wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-secondary text-uppercase mb-3">Our Features</h6>
+                    <h1 class="mb-5">We Are Trusted Logistics Company Since 1990</h1>
+                    <div class="d-flex mb-5 wow fadeInUp" data-wow-delay="0.3s">
+                        <i class="fa fa-globe text-primary fa-3x flex-shrink-0"></i>
+                        <div class="ms-4">
+                            <h5>Worldwide Service</h5>
+                            <p class="mb-0">Diam dolor ipsum sit amet eos erat ipsum lorem sed stet lorem sit clita duo justo magna erat amet</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-5 wow fadeIn" data-wow-delay="0.5s">
+                        <i class="fa fa-shipping-fast text-primary fa-3x flex-shrink-0"></i>
+                        <div class="ms-4">
+                            <h5>On Time Delivery</h5>
+                            <p class="mb-0">Diam dolor ipsum sit amet eos erat ipsum lorem sed stet lorem sit clita duo justo magna erat amet</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-0 wow fadeInUp" data-wow-delay="0.7s">
+                        <i class="fa fa-headphones text-primary fa-3x flex-shrink-0"></i>
+                        <div class="ms-4">
+                            <h5>24/7 Telephone Support</h5>
+                            <p class="mb-0">Diam dolor ipsum sit amet eos erat ipsum lorem sed stet lorem sit clita duo justo magna erat amet</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0 wow fadeInRight" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src={{asset('frontend/assets/img/feature.jpg')}} style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
 
-		<script src={{asset('assets/frontend/js/jquery-1.11.1.min.js')}}></script>
-		<script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
-		<script src={{asset('assets/frontend/js/plugins.js')}}></script>
-		<script src={{asset('assets/frontend/js/app.js')}}></script>
 
-	</body>
+    <!-- Pricing Start -->
+    <div class="container-xxl py-5">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-secondary text-uppercase">Pricing Plan</h6>
+                <h1 class="mb-5">Perfect Pricing Plan</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="price-item">
+                        <div class="border-bottom p-4 mb-4">
+                            <h5 class="text-primary mb-1">Basic Plan</h5>
+                            <h1 class="display-5 mb-0">
+                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>49.00<small
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Month</small>
+                            </h1>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <p><i class="fa fa-check text-success me-3"></i>HTML5 & CSS3</p>
+                            <p><i class="fa fa-check text-success me-3"></i>Bootstrap v5</p>
+                            <p><i class="fa fa-check text-success me-3"></i>FontAwesome Icons</p>
+                            <p><i class="fa fa-check text-success me-3"></i>Responsive Layout</p>
+                            <p><i class="fa fa-check text-success me-3"></i>Cross-browser Support</p>
+                            <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span >Order Now</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="price-item">
+                        <div class="border-bottom p-4 mb-4">
+                            <h5 class="text-primary mb-1">Standard Plan</h5>
+                            <h1 class="display-5 mb-0">
+                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>99.00<small
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Month</small>
+                            </h1>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <p><i class="fa fa-check text-success me-3"></i>HTML5 & CSS3</p>
+                            <p><i class="fa fa-check text-success me-3"></i>Bootstrap v5</p>
+                            <p><i class="fa fa-check text-success me-3"></i>FontAwesome Icons</p>
+                            <p><i class="fa fa-check text-success me-3"></i>Responsive Layout</p>
+                            <p><i class="fa fa-check text-success me-3"></i>Cross-browser Support</p>
+                            <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span >Order Now</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="price-item">
+                        <div class="border-bottom p-4 mb-4">
+                            <h5 class="text-primary mb-1">Advanced Plan</h5>
+                            <h1 class="display-5 mb-0">
+                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>149.00<small
+                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Month</small>
+                            </h1>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <p><i class="fa fa-check text-success me-3"></i>HTML5 & CSS3</p>
+                            <p><i class="fa fa-check text-success me-3"></i>Bootstrap v5</p>
+                            <p><i class="fa fa-check text-success me-3"></i>FontAwesome Icons</p>
+                            <p><i class="fa fa-check text-success me-3"></i>Responsive Layout</p>
+                            <p><i class="fa fa-check text-success me-3"></i>Cross-browser Support</p>
+                            <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span >Order Now</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing End -->
 
-</html>
+
+    <!-- Quote Start -->
+    <div class="container-xxl py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-secondary text-uppercase mb-3">Get A Quote</h6>
+                    <h1 class="mb-5">Request A Free Qoute!</h1>
+                    <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-headphones fa-2x flex-shrink-0 bg-primary p-3 text-white"></i>
+                        <div class="ps-4">
+                            <h6>Call for any query!</h6>
+                            <h3 class="text-primary m-0">+012 345 6789</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="bg-light text-center p-5 wow fadeIn" data-wow-delay="0.5s">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select border-0" style="height: 55px;">
+                                        <option selected>Select A Freight</option>
+                                        <option value="1">Freight 1</option>
+                                        <option value="2">Freight 2</option>
+                                        <option value="3">Freight 3</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="Special Note"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quote End -->
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-secondary text-uppercase">Our Team</h6>
+                <h1 class="mb-5">Expert Team Members</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item p-4">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid" src={{asset('frontend/assets/img/team-1.jpg')}} alt="">
+                        </div>
+                        <h5 class="mb-0">Full Name</h5>
+                        <p>Designation</p>
+                        <div class="btn-slide mt-1">
+                            <i class="fa fa-share"></i>
+                            <span>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item p-4">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid" src={{asset('frontend/assets/img/team-2.jpg')}} alt="">
+                        </div>
+                        <h5 class="mb-0">Full Name</h5>
+                        <p>Designation</p>
+                        <div class="btn-slide mt-1">
+                            <i class="fa fa-share"></i>
+                            <span>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item p-4">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid" src={{asset('frontend/assets/img/team-3.jpg')}} alt="">
+                        </div>
+                        <h5 class="mb-0">Full Name</h5>
+                        <p>Designation</p>
+                        <div class="btn-slide mt-1">
+                            <i class="fa fa-share"></i>
+                            <span>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                    <div class="team-item p-4">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid" src={{asset('frontend/assets/img/team-4.jpg')}} alt="">
+                        </div>
+                        <h5 class="mb-0">Full Name</h5>
+                        <p>Designation</p>
+                        <div class="btn-slide mt-1">
+                            <i class="fa fa-share"></i>
+                            <span>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="text-center">
+                <h6 class="text-secondary text-uppercase">Testimonial</h6>
+                <h1 class="mb-0">Our Clients Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item p-4 my-5">
+                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
+                    <div class="d-flex align-items-end mb-4">
+                        <img class="img-fluid flex-shrink-0" src={{asset('frontend/assets/img/testimonial-1.jpg')}} style="width: 80px; height: 80px;">
+                        <div class="ms-4">
+                            <h5 class="mb-1">Client Name</h5>
+                            <p class="m-0">Profession</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                </div>
+                <div class="testimonial-item p-4 my-5">
+                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
+                    <div class="d-flex align-items-end mb-4">
+                        <img class="img-fluid flex-shrink-0" src={{asset('frontend/assets/img/testimonial-2.jpg')}} style="width: 80px; height: 80px;">
+                        <div class="ms-4">
+                            <h5 class="mb-1">Client Name</h5>
+                            <p class="m-0">Profession</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                </div>
+                <div class="testimonial-item p-4 my-5">
+                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
+                    <div class="d-flex align-items-end mb-4">
+                        <img class="img-fluid flex-shrink-0" src={{asset('frontend/assets/img/testimonial-3.jpg')}} style="width: 80px; height: 80px;">
+                        <div class="ms-4">
+                            <h5 class="mb-1">Client Name</h5>
+                            <p class="m-0">Profession</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                </div>
+                <div class="testimonial-item p-4 my-5">
+                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
+                    <div class="d-flex align-items-end mb-4">
+                        <img class="img-fluid flex-shrink-0" src={{asset('frontend/assets/img/testimonial-4.jpg')}} style="width: 80px; height: 80px;">
+                        <div class="ms-4">
+                            <h5 class="mb-1">Client Name</h5>
+                            <p class="m-0">Profession</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+@endsection
+

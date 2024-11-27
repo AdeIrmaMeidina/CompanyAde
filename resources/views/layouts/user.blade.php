@@ -1,259 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
-		<title>Car Workshop</title>
+<head>
+    <meta charset="utf-8">
+    <title>Logistica - Shipping Company Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-		<!-- Loading third party fonts -->
-		<link href="http://fonts.googleapis.com/css?family=Titillium+Web:300,400,700|" rel="stylesheet" type="text/css">
-		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Favicon -->
+    <link href={{asset('frontend/assets/img/favicon.ico')}} rel="icon">
 
-		<!-- Loading main css file -->
-		<link rel="stylesheet" href="style.css">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
-		<!--[if lt IE 9]>
-		<script src="js/ie-support/html5.js"></script>
-		<script src="js/ie-support/respond.js"></script>
-		<![endif]-->
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-	</head>
+    <!-- Libraries Stylesheet -->
+    <link href={{asset('frontend/assets/lib/animate/animate.min.css')}} rel="stylesheet">
+    <link href={{asset('frontend/assets/lib/owlcarousel/assets/owl.carousel.min.css')}} rel="stylesheet">
 
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href={{asset('frontend/assets/css/bootstrap.min.css')}} rel="stylesheet">
 
-	<body class="header-collapse">
+    <!-- Template Stylesheet -->
+    <link href={{asset('frontend/assets/css/style.css')}} rel="stylesheet">
+</head>
 
-		<div id="site-content">
-
-			<header class="site-header">
-				<div class="container">
-					<a id="branding" href="index.html">
-						<img src="images/logo.png" alt="Company Logo" class="logo">
-						<h1 class="site-title">Company<span>name</span></h1>
-					</a>
-
-					<nav class="main-navigation">
-						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
-						<ul class="menu">
-							<li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
-							<li class="menu-item"><a href="about.html">About</a></li>
-							<li class="menu-item"><a href="services.html">Services</a></li>
-							<li class="menu-item"><a href="gallery.html">Gallery</a></li>
-							<li class="menu-item"><a href="contact.html">Contact</a></li>
-						</ul>
-					</nav>
-					<nav class="mobile-navigation"></nav>
-				</div>
-			</header> <!-- .site-header -->
-
-			<main class="main-content">
-				<div class="hero hero-slider">
-					<ul class="slides">
-						<li data-bg-image="dummy/slide-1.jpg">
-							<div class="container">
-								<h2 class="slide-title">Place the header here</h2>
-								<p class="slide-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <br> totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
-								<a href="#" class="button">Read more</a>
-							</div>
-						</li>
-						<li data-bg-image="dummy/slide-2.jpg">
-							<div class="container">
-								<h2 class="slide-title">Place the slide 2 header here</h2>
-								<p class="slide-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <br> totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
-								<a href="#" class="button">Read more</a>
-							</div>
-						</li>
-						<li data-bg-image="dummy/slide-3.jpg">
-							<div class="container">
-								<h2 class="slide-title">Place third slide header here</h2>
-								<p class="slide-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <br> totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
-								<a href="#" class="button">Read more</a>
-							</div>
-						</li>
-					</ul>
-				</div> <!-- .hero-slider -->
-
-				<div class="fullwidth-block">
-					<div class="container">
-						<h2 class="section-title">Welcome to our website</h2>
-						<p class="section-desc">Occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-
-						<div class="row">
-
-							<div class="counter">
-								<img src="images/icon-car.png" class="counter-icon">
-								<h3 class="counter-num">1500</h3>
-								<small class="counter-label">car repaired</small>
-							</div>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
 
 
-							<div class="counter">
-								<img src="images/icon-wrench.png" class="counter-icon">
-								<h3 class="counter-num">5000</h3>
-								<small class="counter-label">diagnoses</small>
-							</div>
+    <!-- Navbar Start -->
+    @include('layouts.user.nav')
+    <!-- Navbar End -->
+
+    @yield('content')
+
+    <!-- Footer Start -->
+    @include('layouts.user.footer')
+    <!-- Footer End -->
 
 
-							<div class="counter">
-								<img src="images/icon-gears.png" class="counter-icon">
-								<h3 class="counter-num">6000</h3>
-								<small class="counter-label">gears changed</small>
-							</div>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-							<div class="counter last">
-								<img src="images/icon-oil.png" class="counter-icon">
-								<h3 class="counter-num">1200</h3>
-								<small class="counter-label">oil litres used</small>
-							</div>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src={{asset('frontend/assets/lib/wow/wow.min.js')}}></script>
+    <script src={{asset('frontend/assets/lib/easing/easing.min.js')}}></script>
+    <script src={{asset('frontend/assets/lib/waypoints/waypoints.min.js')}}></script>
+    <script src={{asset('frontend/assets/lib/counterup/counterup.min.js')}}></script>
+    <script src={{asset('frontend/assets/lib/owlcarousel/owl.carousel.min.js')}}></script>
 
-						</div>
-					</div> <!-- .container -->
-				</div> <!-- .fullwidth-block -->
+    <!-- Template Javascript -->
+    <script src={{asset('frontend/assets/js/main.js')}}></script>
+    <script>
+        function toggleMessage(element) {
+            // Ambil pesan lengkap dari atribut data-full-message
+            var fullMessage = element.getAttribute('data-full-message');
 
-				<div class="fullwidth-block dark-bg" data-bg-color="#1b1b1b">
-					<div class="container">
-						<h2 class="section-title">Welcome to our website</h2>
-						<div class="row">
-							<div class="col-md-3 col-sm-6">
-								<div class="team">
-									<figure class="team-image"><img src="dummy/person-1.jpg" alt="person-1"></figure>
-									<h3 class="team-name">Steven Simon</h3>
-									<small class="team-desc">Main mechaninc</small>
-									<div class="team-social">
-										<a href=""><i class="fa fa-facebook"></i></a>
-										<a href=""><i class="fa fa-google-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="team">
-									<figure class="team-image"><img src="dummy/person-2.jpg" alt="person-2"></figure>
-									<h3 class="team-name">George Stevens</h3>
-									<small class="team-desc">Painter</small>
-									<div class="team-social">
-										<a href=""><i class="fa fa-facebook"></i></a>
-										<a href=""><i class="fa fa-google-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="team">
-									<figure class="team-image"><img src="dummy/person-3.jpg" alt="person-3"></figure>
-									<h3 class="team-name">David Smith</h3>
-									<small class="team-desc">Engineer</small>
-									<div class="team-social">
-										<a href=""><i class="fa fa-facebook"></i></a>
-										<a href=""><i class="fa fa-google-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="team">
-									<figure class="team-image"><img src="dummy/person-4.jpg" alt="person-4"></figure>
-									<h3 class="team-name">Howarrd Newman</h3>
-									<small class="team-desc">Computer Specialist</small>
-									<div class="team-social">
-										<a href=""><i class="fa fa-facebook"></i></a>
-										<a href=""><i class="fa fa-google-plus"></i></a>
-									</div>
-								</div>
-							</div>
+            // Ganti teks elemen dengan pesan lengkap
+            element.innerHTML = fullMessage;
 
-						</div> <!-- .row -->
-					</div> <!-- .container -->
-				</div> <!-- .fullwidth-block -->
+            // (Optional) Anda bisa mengganti tombolnya atau melakukan hal lain
+            element.onclick = function() {
+                // Jika ingin mengembalikan ke tampilan semula
+                element.innerHTML = "{{ \Illuminate\Support\Str::limit('Ini adalah deskripsi lengkap yang akan ditampilkan saat diklik. Anda dapat menambahkan lebih banyak teks di sini untuk menunjukkan pesan yang lebih panjang.', 50, '...') }}";
+                element.onclick = toggleMessage;
+            }
+        }
+    </script>
 
-				<div class="fullwidth-block">
-					<div class="container">
-						<h2 class="section-title">Why choose us?</h2>
-						<div class="row">
-							<div class="col-md-4">
-								<div class="feature">
-									<div class="feature-icon">
-										<img src="images/icon-wheel-white.png">
-									</div>
-									<h3 class="feature-title">Sed ut perspiciatis unde omnis</h3>
-									<p>Iste natus error sit voluptatem accusantium laudantium totam rem aperiam eaque ipsa quae dolor inventore dolor sit.</p>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="feature">
-									<div class="feature-icon">
-										<img src="images/icon-wrench-white.png">
-									</div>
-									<h3 class="feature-title">Nemo enim ipsam voluptatem</h3>
-									<p>Iste natus error sit voluptatem accusantium laudantium totam rem aperiam eaque ipsa quae dolor inventore dolor sit.</p>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="feature">
-									<div class="feature-icon">
-										<img src="images/icon-key-white.png">
-									</div>
-									<h3 class="feature-title">Temporibus autem quibusdam</h3>
-									<p>Iste natus error sit voluptatem accusantium laudantium totam rem aperiam eaque ipsa quae dolor inventore dolor sit.</p>
-								</div>
-							</div>
-						</div> <!-- .row -->
-					</div> <!-- .container -->
-				</div> <!-- .fullwidth-block -->
-
-				<div class="fullwidth-block dark-bg" data-bg-color="#f63f3f">
-					<div class="container">
-						<h2 class="section-title">Blog news</h2>
-						<ul class="news">
-							<li>
-								<div class="entry-date"><span class="date">3</span><span class="month">July</span></div>
-								<div class="entry-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit alias nihil cumque ratione soluta ut laborum quod architecto vitae, eum magnam totam cupiditate accusantium. Perspiciatis iusto ex perferendis reprehenderit fugiat!</div>
-							</li>
-							<li>
-								<div class="entry-date"><span class="date">30</span><span class="month">June</span></div>
-								<div class="entry-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit autem quasi nisi iure. Asperiores placeat enim id excepturi quas delectus error aliquam. Sed quo magnam dolor ratione voluptatum facere, nihil.</div>
-							</li>
-							<li>
-								<div class="entry-date"><span class="date">28</span><span class="month">June</span></div>
-								<div class="entry-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente eaque culpa optio voluptas rem, iusto soluta at temporibus commodi repellat dicta facilis sequi, quisquam a quia animi ad mollitia ab.</div>
-							</li>
-						</ul>
-						<div class="text-center">
-							<a href="#" class="button invert">Show more news</a>
-						</div>
-					</div>
-				</div>
-
-			</main> <!-- .main-content -->
-
-			<footer class="site-footer">
-				<div class="container">
-					<div class="subscribe-form">
-						<form action="#">
-							<input type="text" placeholder="Enter your email to subscribe...">
-							<button type="submit"><img src="images/icon-envelope-white.png" alt=""></button>
-						</form>
-					</div>
-					<div class="social-links">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-google-plus"></i></a>
-						<a href="#"><i class="fa fa-pinterest"></i></a>
-					</div>
-					<div class="copy">
-						<p>Copyright 2014 Company name. Designed by Themeezy. All rights reserved.</p>
-					</div>
-				</div>
-			</footer> <!-- .site-footer -->
-
-		</div> <!-- #site-content -->
-
-
-
-		<script src="js/jquery-1.11.1.min.js"></script>
-		<script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
-		<script src="js/plugins.js"></script>
-		<script src="js/app.js"></script>
-
-	</body>
+</body>
 
 </html>
