@@ -27,8 +27,9 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="text-secondary text-uppercase mb-3">Some Facts</h6>
-                <h1 class="mb-5">#1 Place To Manage All Of Your Shipments</h1>
-                <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                <h1 class="mb-5">VISI</h1>
+                <p class="mb-5">Menjadi Group Dealer Honda dan Bengkel AHASS terkemuka dan terpercaya di Banten dengan mengutamakan prinsip kejujuran, keramahtamahan dan pelayanan prima untuk memberikan nilai-nilai positif dan
+                    kepuasan bagi seluruh stakeholder dalam bingkai keridoan Allah SWT.</p>
                 <div class="d-flex align-items-center">
                     <i class="fa fa-headphones fa-2x flex-shrink-0 bg-primary p-3 text-white"></i>
                     <div class="ps-4">

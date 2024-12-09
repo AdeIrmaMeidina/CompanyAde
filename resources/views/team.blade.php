@@ -8,80 +8,20 @@
             <h1 class="mb-5">Expert Team Members</h1>
         </div>
         <div class="row g-4">
+            @php $organigram = App\Models\Organigram::orderBy('id', 'asc')->get(); @endphp
+            @foreach ($organigram as $data)
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item p-4">
                     <div class="overflow-hidden mb-4">
-                        <img class="img-fluid" src={{asset('frontend/assets/img/team-1.jpg')}} alt="">
+                        <img class="img-fluid" src="{{ asset('/storage/organigrams/' . $data->image) }}" alt="">
                     </div>
-                    <h5 class="mb-0">Yudi Guntara</h5>
-                    <p>Kepala Bengkel</p>
+                    <h5 class="mb-0">{{ $data->nama }}</h5>
+                    <p>{{ $data->jabatan }}</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item p-4">
-                    <div class="overflow-hidden mb-4">
-                        <img class="img-fluid" src={{asset('frontend/assets/img/team-2.jpg')}} alt="">
-                    </div>
-                    <h5 class="mb-0">Rahmat Hidayat</h5>
-                    <p>Service Advisor</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="team-item p-4">
-                    <div class="overflow-hidden mb-4">
-                        <img class="img-fluid" src={{asset('frontend/assets/img/team-3.jpg')}} alt="">
-                    </div>
-                    <h5 class="mb-0">Fredi Widyanto</h5>
-                    <p>Kepala Bengkel</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
-                <div class="team-item p-4">
-                    <div class="overflow-hidden mb-4">
-                        <img class="img-fluid" src={{asset('frontend/assets/img/team-4.jpg')}} alt="">
-                    </div>
-                    <h5 class="mb-0">Irawan</h5>
-                    <p>Mekanik</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item p-4">
-                    <div class="overflow-hidden mb-4">
-                        <img class="img-fluid" src={{asset('frontend/assets/img/team-2.jpg')}} alt="">
-                    </div>
-                    <h5 class="mb-0">Dadan</h5>
-                    <p>Mekanik</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item p-4">
-                    <div class="overflow-hidden mb-4">
-                        <img class="img-fluid" src={{asset('frontend/assets/img/team-3.jpg')}} alt="">
-                    </div>
-                    <h5 class="mb-0">Iwan Gunawan</h5>
-                    <p>Mekanik</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="team-item p-4">
-                    <div class="overflow-hidden mb-4">
-                        <img class="img-fluid" src={{asset('frontend/assets/img/team-4.jpg')}} alt="">
-                    </div>
-                    <h5 class="mb-0">Akmal Firdaus Hendra</h5>
-                    <p>Mekanik</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
-                <div class="team-item p-4">
-                    <div class="overflow-hidden mb-4">
-                        <img class="img-fluid" src={{asset('frontend/assets/img/team-1.jpg')}} alt="">
-                    </div>
-                    <h5 class="mb-0">Rias</h5>
-                    <p>Mekanik</p>
-                </div>
-            </div>
+            @endforeach
         </div>
-    </div>
+
 </div>
 <!-- Team End -->
 @endsection

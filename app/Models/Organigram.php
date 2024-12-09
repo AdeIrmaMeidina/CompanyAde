@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Organigram extends Model
 {
     use HasFactory;
-    protected $fillable = ['id', 'nama', 'jabatan'];
+    protected $fillable = ['id', 'nama', 'jabatan', 'image'];
     public $timestamps = true;
 }

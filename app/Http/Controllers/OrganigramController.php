@@ -39,12 +39,17 @@ class OrganigramController extends Controller
         $this->validate($request, [
             'nama' => 'required',
             'jabatan' => 'required',
+            'image' => 'required|image|mimes:jpeg,jpg,png|max:5000',
 
         ]);
 
         $organigram = new Organigram();
         $organigram->nama = $request->nama;
         $organigram->jabatan = $request->jabatan;
+        //upload image
+        $image = $request->file('image');
+        $image->storeAs('public/organigrams', $image->hashName());
+        $organigram->image = $image->hashName();
         $organigram->save();
         return redirect()->route('organigram.index');
     }
@@ -88,10 +93,16 @@ class OrganigramController extends Controller
         $this->validate($request, [
             'nama' => 'required',
             'jabatan' => 'required',
+            'image' => 'required|image|mimes:jpeg,jpg,png|max:5000',
         ]);
+
         $organigram = Organigram::findOrFail($id);
         $organigram->nama = $request->nama;
         $organigram->jabatan = $request->jabatan;
+        //upload image
+        $image = $request->file('image');
+        $image->storeAs('public/organigrams', $image->hashName());
+        $organigram->image = $image->hashName();
         $organigram->save();
         return redirect()->route('organigram.index');
     }

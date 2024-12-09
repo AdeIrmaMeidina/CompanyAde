@@ -25,6 +25,7 @@
                                     <th>Id</th>
                                     <th>Nama</th>
                                     <th>Jabatan</th>
+                                    <th>Image</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -34,8 +35,10 @@
                                 <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $data->nama }}</td>
-                                <td>{{ $data->jabatan }}</td>
-
+                                <td>{{ $data->jabatan }}</td><td>
+                                    <img src="{{ asset('/storage/organigrams/' . $data->image) }}" class="rounded"
+                                        style="width: 150px">
+                                </td>
                                     <td>
                                         <form action="{{route('organigram.destroy', $data->id)}}" method="POST">
                                             @csrf

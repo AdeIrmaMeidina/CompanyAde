@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->String('nama');
             $table->String('jabatan');
+            $table->String('image');
             $table->timestamps();
         });
     }
