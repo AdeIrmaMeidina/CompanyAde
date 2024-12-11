@@ -1,13 +1,12 @@
 @extends('layouts.user')
 @section('content')
- <!-- Contact Start -->
+    <!-- Contact Start -->
     <div class="container-fluid overflow-hidden py-5 px-lg-0">
         <div class="container contact-page py-5 px-lg-0">
             <div class="row g-5 mx-lg-0">
                 <div class="col-md-6 contact-form wow fadeIn" data-wow-delay="0.1s">
                     <h6 class="text-secondary text-uppercase">Get In Touch</h6>
                     <h1 class="mb-4">Contact For Any Query</h1>
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
                     <div class="bg-light p-4">
                         <form>
                             <div class="row g-3">
@@ -44,15 +43,14 @@
                 </div>
                 <div class="col-md-6 pe-lg-0 wow fadeInRight" data-wow-delay="0.1s">
                     <div class="position-relative h-100">
-                        <iframe class="position-absolute w-100 h-100" style="object-fit: cover;"
-                        src="https://www.google.com/maps/dir/-6.9600284,107.5860216/Bengkel+Motor+Honda+Ahass+16895+CV+Prima+Mandiri+Motor,+Jl.+Sukamenak+No.111,+Sukamenak,+Kec.+Margahayu,+Kabupaten+Bandung,+Jawa+Barat+40227/@-6.9648494,107.5630238,6376m/data=!3m2!1e3!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x2e68e929c1f9d90b:0x4a7b234981f3283b!2m2!1d107.5818035!2d-6.9715227!5m1!1e2?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
-                        frameborder="0" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.321065409239!2d107.57926797437376!3d-6.97139676826078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e929c1f9d90b%3A0x4a7b234981f3283b!2sBengkel%20Motor%20Honda%20Ahass%2016895%20CV%20Prima%20Mandiri%20Motor!5e0!3m2!1sid!2sid!4v1733910244502!5m2!1sid!2sid"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Contact End -->
-
 @endsection
